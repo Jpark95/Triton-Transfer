@@ -15,12 +15,4 @@ DOWNLOAD_DIR=$2
 COMMAND=$3
 FILENAME_OR_UPLOADDIR=$4
 
-# Now call your client with the above arguments
-# Eg. If you are using python and your client is Client.py
-# Call
-#
-# python Client.py $CONFIGFILE_PATH $DOWNLOAD_DIR $COMMAND $FILENAME_OR_UPLOADDIR
-#
-# or if CPP
-#
-# ./client $CONFIGFILE_PATH $DOWNLOAD_DIR $COMMAND $FILENAME_OR_UPLOADDIR
+python Client.py $CONFIGFILE_PATH $DOWNLOAD_DIR $COMMAND $FILENAME_OR_UPLOADDIR

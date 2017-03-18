@@ -8,7 +8,6 @@ namespace java blockServer
 	example, when the client requests a block that is not present
 	you can set the status as ERROR */
 
-typedef shared.serverInfo serverInfo
 typedef shared.response response
 
 struct hashBlock {
@@ -24,8 +23,8 @@ struct hashBlocks {
 service BlockServerService {
 	response storeBlock(1: hashBlock hashblock),
 	hashBlock getBlock(1: string hash),
-	response deleteBlock(1: string hash)
-
+	response deleteBlock(1: string hash),
+	bool hasBlock(1: string hash)
 	// Add any procedure you need below
 
 }

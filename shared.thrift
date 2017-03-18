@@ -24,7 +24,6 @@ enum uploadResponseType {
 struct uploadResponse {
 	1: uploadResponseType status,
 	2: list<string> hashList,
-	3: list<list<string>> blockServerList
 }
 
 struct file {

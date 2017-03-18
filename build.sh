@@ -12,20 +12,21 @@ BUILD_OR_CLEAN=$1
 
 if [ $BUILD_OR_CLEAN == "build" ]
 then
-	echo "Building"
 	# Enter your build code here, think about make
 	# thrift --gen py -r metadataServer.thrift
 	# thrift --gen py -r blockServer.thrift
 
 	# Fill in the build part, see comments below
-
+	thrift --gen py blockServer.thrift
+	thrift --gen py metadataServer.thrift
+	thrift --gen py shared.thrift
 	exit
 
 elif [ $BUILD_OR_CLEAN == "clean" ]
 then
 	echo "Cleaning"
 	# Do the cleaning part here, think of make clean
-	# rm -rf gen-py
+	rm -rf gen-py
 
 	# Fill in code specific cleanup similar to what you would do in make clean
 else
@@ -33,23 +34,3 @@ else
 	echo "Either ./build.sh build or ./build.sh clean"
 	exit
 fi
-# This script is used to build your code
-
-# Since many of you will use different programming languages, you can call your
-# build file from here
-
-# If you are using an interpreted language like python, just leave as it is
-
-# Eg: for CPP
-#
-# SRC_DIR = src/
-# INC_DIR = inc/
-# etc.
-# g++ ...
-# If you want, you may call a make file from here
-# make
-
-# For Java
-# Call ant
-
-# Autograder will be calling this script to build your source code
